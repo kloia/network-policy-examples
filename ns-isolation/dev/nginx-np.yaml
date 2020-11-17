@@ -2,16 +2,16 @@ apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   name: nginx-egress
-  namespace: prod
+  namespace: dev
 spec:
   podSelector:
     matchLabels:
       app: nginx
-  ingress:
-  - from:
+  egress:
+  - to:
     - podSelector:
         matchLabels:
-          app: "nginx"
+          app: "api"
       namespaceSelector:
         matchLabels:
           env: prod

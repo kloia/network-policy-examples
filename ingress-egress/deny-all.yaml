@@ -5,6 +5,13 @@ metadata:
   namespace: default
 spec:
   podSelector: {}
+  egress:
+  - to:
+    ports:
+    - protocol: TCP
+      port: 53
+    - protocol: UDP
+      port: 53
   policyTypes:
   - Ingress
   - Egress

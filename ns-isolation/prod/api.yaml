@@ -18,3 +18,4 @@ spec:
       containers:
       - image: thomaspoignant/hello-world-rest-json
         name: api
+
