@@ -11,7 +11,7 @@ spec:
   - to:
     - podSelector:
         matchLabels:
-          app: "api"
+          app: api
       namespaceSelector:
         matchLabels:
           env: prod

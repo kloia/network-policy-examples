@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: network-policy-dev
+  namespace: dev
+spec:
+  podSelector: {}
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          env: dev
+  egress:
+    - to:
+      - namespaceSelector:
+          matchLabels:
+            env: dev
